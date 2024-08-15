@@ -39,6 +39,7 @@ jobs:
           cd MeMo1-Ejercicio1
           chmod 777 ./gradlew
           chmod +x ./gradlew
+          ./gradlew dependencies
           ./gradlew build
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
