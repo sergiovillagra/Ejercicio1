@@ -2,13 +2,24 @@ package memo1.ejercicio1;
 
 public class Account {
     private Long cbu;
-    private Double balance;
+    private double balance;
 
     public Account() {
         this.balance = 0.0;
     }
 
-    public Account(Double balance) {
+    public Account(double balance) {
+        if (balance < 0) {
+            throw new IllegalArgumentException("Balance cannot be negative.");
+        }
+        this.balance = balance;
+    }
+
+    public Account(Long cbu, double balance) {
+        if (balance < 0) {
+            throw new IllegalArgumentException("Balance cannot be negative.");
+        }
+        this.cbu = cbu;
         this.balance = balance;
     }
 
@@ -20,28 +31,31 @@ public class Account {
         this.cbu = cbu;
     }
 
-    public Double getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(Double balance) {
+    public void setBalance(double balance) {
+        if (balance < 0) {
+            throw new IllegalArgumentException("Balance cannot be negative.");
+        }
         this.balance = balance;
     }
 
-    public boolean withdraw(Double amount) {
-        if (amount <= balance) {
-            balance -= amount;
-            return true;
+    public boolean withdraw(double amount) {
+        if (amount <= 0 || amount > balance) {
+            return false;
         }
-        return false;
+        balance -= amount;
+        return true;
     }
 
-    public boolean deposit(Double amount) {
-        if (amount >= 0) {
-            balance += amount;
-            return true;
+    public boolean deposit(double amount) {
+        if (amount < 0) {
+            return false;
         }
-        return false;
+        balance += amount;
+        return true;
     }
+
 }
-
