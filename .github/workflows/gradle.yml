@@ -47,12 +47,7 @@ jobs:
           cd MeMo1-Ejercicio1
           ./gradlew test
     
-    - name: Archive test results
-      if: always()  # Se asegura de que este paso siempre se ejecute, incluso si las pruebas fallan.
-      uses: actions/upload-artifact@v2
-      with:
-        name: test-results
-        path: MeMo1-Ejercicio1/build/reports/tests/test
+
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
