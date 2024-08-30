@@ -1,2 +1,4 @@
-Una sencilla aplicación Java que permite crear cuentas bancarias, depositar y extraer fondos. 
-Incluye los escenarios en Gherkin.
+FIUBA-MeMo1
+
+Esta es una aplicación Java muy sencilla que permite crear cuentas bancarias y depositar y extraer fondos. 
+Incluye pruebas unitarias, escenarios en Gherkin y pruebas funcionales basadas en los escenarios. 
