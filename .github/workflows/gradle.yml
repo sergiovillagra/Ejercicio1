@@ -47,7 +47,15 @@ jobs:
           cd MeMo1-Ejercicio1
           ./gradlew test
     
-
+    - name: Archive Cucumber test results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: cucumber-reports
+        path: |
+          MeMo1-Ejercicio1/app/build/reports/cucumber/cucumber-html-report.html
+          MeMo1-Ejercicio1/app/build/reports/cucumber/cucumber-report.json
+          MeMo1-Ejercicio1/app/build/reports/cucumber/cucumber-results.xml
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
