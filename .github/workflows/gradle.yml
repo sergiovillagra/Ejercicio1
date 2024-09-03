@@ -46,6 +46,12 @@ jobs:
       with:
         gradle-version: '8.5' # Asegúrate de usar la versión adecuada
     
+    - name: Change directory to project folder
+      run: cd MeMo1-Ejercicio1  # Asegúrate de estar en el directorio donde está gradlew
+      
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
+    
     - name: Build with Gradle
       run: ./gradlew build
 
