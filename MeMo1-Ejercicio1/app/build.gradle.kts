@@ -35,7 +35,14 @@ application {
     mainClass.set("memo1.ejercicio1.App")
 }
 
+tasks.register<Test>("cucumberTest") {
+    useJUnitPlatform()
+    include("**/RunCucumberTest*")
+}
+
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+
