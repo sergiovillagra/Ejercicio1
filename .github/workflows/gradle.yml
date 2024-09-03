@@ -55,10 +55,14 @@ jobs:
         ./gradlew build
 
     - name: Run Unit Tests and Generate Reports
-      run: ./gradlew test
+      run: |
+        cd MeMo1-Ejercicio1
+        ./gradlew test
 
     - name: Run Cucumber Tests
-      run: ./gradlew cucumberTest
+      run: |
+        cd MeMo1-Ejercicio1
+        ./gradlew cucumberTest
 
     # Instalar wkhtmltopdf para convertir los reportes HTML a PDF
     - name: Install wkhtmltopdf
