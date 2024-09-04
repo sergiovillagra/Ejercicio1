@@ -87,4 +87,11 @@ jobs:
     #      cucumber-report.pdf
     #      unit-test-report.pdf
 
-   
+   # Subir los reportes HTML como artefactos
+    - name: Archive Test Reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-reports
+        path: |
+          MeMo1-Ejercicio1/app/build/reports/tests/test/index.html
+          MeMo1-Ejercicio1/app/build/reports/cucumber/cucumber-html-report.html
