@@ -86,3 +86,12 @@ jobs:
     #    path: |
     #      cucumber-report.pdf
     #      unit-test-report.pdf
+
+    - name: Convert HTML to PDF
+      run: wkhtmltopdf /home/runner/work/Ejercicio1/Ejercicio1/MeMo1-Ejercicio1/app/build/reports/tests/test/index.html /home/runner/work/Ejercicio1/Ejercicio1/MeMo1-Ejercicio1/app/build/reports/tests/unit-test-report.pdf
+
+    - name: Upload PDF as artifact
+      uses: actions/upload-artifact@v3
+      with:
+          name: unit-test-report
+          path: /home/runner/work/Ejercicio1/Ejercicio1/MeMo1-Ejercicio1/app/build/reports/tests/unit-test-report.pdf
