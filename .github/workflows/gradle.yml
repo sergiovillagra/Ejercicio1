@@ -69,20 +69,20 @@ jobs:
       run: sudo apt-get install -y wkhtmltopdf
 
     # Convertir los reportes HTML de las pruebas unitarias a PDF
-    - name: Convert Unit Test Report to PDF
-      run: |
-        wkhtmltopdf MeMo1-Ejercicio1/app/build/reports/tests/test/index.html unit-test-report.pdf
+    #- name: Convert Unit Test Report to PDF
+    #  run: |
+    #    wkhtmltopdf MeMo1-Ejercicio1/app/build/reports/tests/test/index.html unit-test-report.pdf
 
     # Convertir los reportes HTML de las pruebas Cucumber a PDF
-    - name: Convert Cucumber Test Report to PDF
-      run: |
-        wkhtmltopdf MeMo1-Ejercicio1/app/build/reports/cucumber/cucumber-html-report.html cucumber-report.pdf
+    #- name: Convert Cucumber Test Report to PDF
+    #  run: |
+    #    wkhtmltopdf MeMo1-Ejercicio1/app/build/reports/cucumber/cucumber-html-report.html cucumber-report.pdf
 
     # Subir los reportes como artefactos para descargarlos luego
-    - name: Archive Cucumber test results
-      uses: actions/upload-artifact@v3
-      with:
-        name: cucumber-reports
-        path: |
-          cucumber-report.pdf
-          unit-test-report.pdf
+    #- name: Archive Cucumber test results
+    #  uses: actions/upload-artifact@v3
+    #  with:
+    #    name: cucumber-reports
+    #    path: |
+    #      cucumber-report.pdf
+    #      unit-test-report.pdf
